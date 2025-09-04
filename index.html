@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Portfolio Website</title>
+
+  <!--google font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;800&display=swap" rel="stylesheet">
+
+  <!--box icons-->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <!-- custom styles -->
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+  <!-- Dark Mode Toggle -->
+  <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" hidden>
+  <label for="theme-toggle" class="theme-toggle"></label>
+
+  <!--header design-->
+ <header>
+   <a href="#" class="logo"><i><span>.P</span>ortfolio</i></a>
+
+        <ul class="navbar">
+           <li><a href="#home">Home</a></li>
+           <li><a href="#about">About</a></li>
+           <li><a href="#services">Services</a></li>
+           <li><a href="#portfolio">Projects</a></li>
+           <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    
+    <!--home start design-->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h3>Hi, It's Me</h3>
+            <h1>Ralph</h1>
+            <h3>And I'm a <span>Software Developer</span></h3>
+            <p>Welcome to my portfolio website! I'm passionate about creating innovative software solutions and bringing ideas to life through code.</p>
+            <div class="social-media">
+              <a href="#"><i class='bx bxl-facebook-square'></i></a>
+              <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+              <a href="#"><i class='bx bxl-twitter'></i></a>
+              <a href="#"><i class='bx bxl-youtube'></i></a>
+            </div>
+        </div>
+        <div class="home-img">
+        <img src="images/home.png" alt="Ralph's Profile">
+        </div>
+    </section>
+    
+    <!--about start design-->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/about.png" alt="About Ralph">
+        </div> 
+
+        <div class="about-text">
+            <h2>About Me</h2>
+            <h3>Software Developer</h3>
+            <p>I'm Ralph Jhon, a passionate software engineer whose days are filled with the rhythmic dance of
+                 keystrokes and the excitement of problem-solving, where lines of code weave the fabric of our digital existence.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+    
+    <!--services start design-->
+    <section class="services" id="services">
+        <div class="heading">
+            <h2>My <span>Services</span></h2>
+        </div> 
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-code-alt'></i>
+                <h2>Software Development</h2>
+                <p>I offer a personalized and innovative approach to software development
+                     that ensures your projects not only meet but exceed expectations.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bx-palette'></i>
+                <h2>Software Design</h2>
+                <p>I specialise in software design services that provide a magical touch to digital encounters.
+                     From user-friendly interfaces to visually excellent applications.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bx-line-chart'></i>
+                <h2>Digital Marketing</h2>
+                <p>I specialise in fueling businesses in the digital realm. Crafting personalized social media plans and fine-tuning SEO strategies.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!--portfolio start design-->
+    <section class="portfolio" id="portfolio">
+        <div class="heading">
+          <h2>My <span>Latest Projects</span></h2>
+        </div>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="images/portfolio-img1.jpeg" alt="Project 1">
+                <div class="portfolio-layer">
+                  <h3>Software Development</h3>
+                  <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            
+            <div class="portfolio-box">
+                <img src="images/portfolio-img2.jpeg" alt="Project 2">
+                <div class="portfolio-layer">
+                  <h3>Software Development</h3>
+                  <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            
+            <div class="portfolio-box">
+               <img src="images/portfolio-img3.jpeg" alt="Project 3">
+               <div class="portfolio-layer">
+                 <h3>Software Design</h3>
+                 <a href="#"><i class='bx bx-link-external'></i></a>
+               </div>
+           </div>
+           
+            <div class="portfolio-box">
+               <img src="images/portfolio-img4.jpeg" alt="Project 4">
+               <div class="portfolio-layer">
+                 <h3>Software Design</h3>
+                 <a href="#"><i class='bx bx-link-external'></i></a>
+             </div>
+           </div>
+        </div>
+    </section>
+    
+     <!--contact start design-->
+     <section class="contact" id="contact">
+          <h2 class="heading">Contact <span>Me!</span></h2>
+          <form action="#">
+            <div class="input-box">
+              <input type="text" placeholder="Full Name">
+              <input type="email" placeholder="Email Address">
+            </div>
+            
+            <div class="input-box">
+              <input type="number" placeholder="Mobile Number">
+              <input type="text" placeholder="Email Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+          </form>
+     </section>
+
+    <!--footer start design-->
+    <footer class="footer">
+       <div class="footer-text">
+         <p>Copyright &copy; 2025 by Ralph Jhon | All Rights Reserved.</p>
+       </div>
+       
+       <div class="footer-icon-top">
+         <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+       </div>
+    </footer>
+</body>
+</html> 
