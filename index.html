@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Responsive Portfolio Website</title>
+  <title>Interactive Portfolio - Ralph</title>
 
   <!--google font-->
   <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -13,161 +13,285 @@
   <!--box icons-->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-  <!-- custom styles -->
+  <!-- Custom styles -->
   <link rel="stylesheet" href="style.css">
-  
 </head>
 
 <body>
   <!-- Dark Mode Toggle -->
-  <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" hidden>
-  <label for="theme-toggle" class="theme-toggle"></label>
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle">
+      <i class="bx bx-sun" id="theme-icon"></i>
+    </button>
+  </div>
+
+  <!-- Edit Mode Toggle -->
+  <div class="edit-mode-container">
+    <button id="edit-toggle" class="edit-toggle">
+      <i class="bx bx-edit-alt"></i>
+      <span>Edit Mode</span>
+    </button>
+  </div>
+
+  <!-- Success/Error Messages -->
+  <div id="notification" class="notification hidden">
+    <i class="bx bx-check-circle"></i>
+    <span id="notification-text"></span>
+  </div>
 
   <!--header design-->
- <header>
-   <a href="#" class="logo"><i><span>.P</span>ortfolio</i></a>
+  <header>
+    <a href="#" class="logo">
+      <i><span>.P</span>ortfolio</i>
+    </a>
 
-        <ul class="navbar">
-           <li><a href="#home">Home</a></li>
-           <li><a href="#about">About</a></li>
-           <li><a href="#services">Services</a></li>
-           <li><a href="#portfolio">Projects</a></li>
-           <li><a href="#contact">Contact</a></li>
-        </ul>
-    </header>
+    <ul class="navbar">
+      <li><a href="#home" data-section="home">Home</a></li>
+      <li><a href="#about" data-section="about">About</a></li>
+      <li><a href="#services" data-section="services">Services</a></li>
+      <li><a href="#portfolio" data-section="portfolio">Projects</a></li>
+      <li><a href="#contact" data-section="contact">Contact</a></li>
+    </ul>
+  </header>
     
-    <!--home start design-->
-    <section class="home" id="home">
-        <div class="home-text">
-            <h3>Hi, It's Me</h3>
-            <h1>Ralph</h1>
-            <h3>And I'm a <span>Software Developer</span></h3>
-            <p>Welcome to my portfolio website! I'm passionate about creating innovative software solutions and bringing ideas to life through code.</p>
-            <div class="social-media">
-              <a href="#"><i class='bx bxl-facebook-square'></i></a>
-              <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-              <a href="#"><i class='bx bxl-twitter'></i></a>
-              <a href="#"><i class='bx bxl-youtube'></i></a>
-            </div>
-        </div>
-        <div class="home-img">
-        <img src="images/home.png" alt="Ralph's Profile">
-        </div>
-    </section>
+  <!--home start design-->
+  <section class="home" id="home">
+    <div class="home-text">
+      <h3 class="editable" data-field="greeting">Hi, It's Me</h3>
+      <h1 class="editable" data-field="name">Ralph</h1>
+      <h3 class="editable" data-field="title">And I'm a <span>Software Developer</span></h3>
+      <p class="editable" data-field="intro">Welcome to my portfolio website! I'm passionate about creating innovative software solutions and bringing ideas to life through code.</p>
+      
+      <div class="social-media">
+        <a href="#" class="social-link" data-platform="facebook">
+          <i class='bx bxl-facebook-square'></i>
+        </a>
+        <a href="#" class="social-link" data-platform="instagram">
+          <i class='bx bxl-instagram-alt'></i>
+        </a>
+        <a href="#" class="social-link" data-platform="twitter">
+          <i class='bx bxl-twitter'></i>
+        </a>
+        <a href="#" class="social-link" data-platform="youtube">
+          <i class='bx bxl-youtube'></i>
+        </a>
+      </div>
+    </div>
     
-    <!--about start design-->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="images/about.png" alt="About Ralph">
-        </div> 
-
-        <div class="about-text">
-            <h2>About Me</h2>
-            <h3>Software Developer</h3>
-            <p>I'm Ralph Jhon, a passionate software engineer whose days are filled with the rhythmic dance of
-                 keystrokes and the excitement of problem-solving, where lines of code weave the fabric of our digital existence.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-    </section>
+    <div class="home-img">
+      <div class="floating-elements">
+        <div class="float-element" data-speed="2">💻</div>
+        <div class="float-element" data-speed="3">⚡</div>
+        <div class="float-element" data-speed="1.5">🚀</div>
+      </div>
+      <img src="images/home.png" alt="Ralph's Profile" class="profile-img">
+    </div>
+  </section>
     
-    <!--services start design-->
-    <section class="services" id="services">
-        <div class="heading">
-            <h2>My <span>Services</span></h2>
-        </div> 
-        <div class="services-container">
-            <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h2>Software Development</h2>
-                <p>I offer a personalized and innovative approach to software development
-                     that ensures your projects not only meet but exceed expectations.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
+  <!--about start design-->
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="images/about.png" alt="About Ralph" class="about-profile-img">
+    </div> 
 
-            <div class="services-box">
-                <i class='bx bx-palette'></i>
-                <h2>Software Design</h2>
-                <p>I specialise in software design services that provide a magical touch to digital encounters.
-                     From user-friendly interfaces to visually excellent applications.</p>
-                <a href="#" class="btn">Read More</a>
+    <div class="about-text">
+      <div class="edit-section-header">
+        <h2 class="editable" data-field="about-title">About Me</h2>
+        <button class="edit-section-btn" data-target="about-section">
+          <i class="bx bx-edit-alt"></i>
+        </button>
+      </div>
+      
+      <div id="about-section" class="editable-section">
+        <h3 class="editable" data-field="about-subtitle">Software Developer</h3>
+        <p class="editable" data-field="about-description">I'm Ralph Jhon, a passionate software engineer whose days are filled with the rhythmic dance of keystrokes and the excitement of problem-solving, where lines of code weave the fabric of our digital existence.</p>
+        
+        <!-- Skills Progress Bars -->
+        <div class="skills-container">
+          <div class="skill-item">
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-skill="90"></div>
             </div>
-
-            <div class="services-box">
-                <i class='bx bx-line-chart'></i>
-                <h2>Digital Marketing</h2>
-                <p>I specialise in fueling businesses in the digital realm. Crafting personalized social media plans and fine-tuning SEO strategies.</p>
-                <a href="#" class="btn">Read More</a>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Python</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-skill="85"></div>
             </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">React</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-skill="80"></div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!--portfolio start design-->
-    <section class="portfolio" id="portfolio">
-        <div class="heading">
-          <h2>My <span>Latest Projects</span></h2>
-        </div>
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="images/portfolio-img1.jpeg" alt="Project 1">
-                <div class="portfolio-layer">
-                  <h3>Software Development</h3>
-                  <a href="#"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            
-            <div class="portfolio-box">
-                <img src="images/portfolio-img2.jpeg" alt="Project 2">
-                <div class="portfolio-layer">
-                  <h3>Software Development</h3>
-                  <a href="#"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            
-            <div class="portfolio-box">
-               <img src="images/portfolio-img3.jpeg" alt="Project 3">
-               <div class="portfolio-layer">
-                 <h3>Software Design</h3>
-                 <a href="#"><i class='bx bx-link-external'></i></a>
-               </div>
-           </div>
-           
-            <div class="portfolio-box">
-               <img src="images/portfolio-img4.jpeg" alt="Project 4">
-               <div class="portfolio-layer">
-                 <h3>Software Design</h3>
-                 <a href="#"><i class='bx bx-link-external'></i></a>
-             </div>
-           </div>
-        </div>
-    </section>
+      </div>
+      
+      <div class="section-actions">
+        <a href="#" class="btn">Read More</a>
+        <button class="btn-secondary save-section-btn" data-target="about-section" style="display: none;">
+          <i class="bx bx-check"></i> Save Changes
+        </button>
+      </div>
+    </div>
+  </section>
     
-     <!--contact start design-->
-     <section class="contact" id="contact">
-          <h2 class="heading">Contact <span>Me!</span></h2>
-          <form action="#">
-            <div class="input-box">
-              <input type="text" placeholder="Full Name">
-              <input type="email" placeholder="Email Address">
-            </div>
-            
-            <div class="input-box">
-              <input type="number" placeholder="Mobile Number">
-              <input type="text" placeholder="Email Subject">
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
-          </form>
-     </section>
+  <!--services start design-->
+  <section class="services" id="services">
+    <div class="heading">
+      <h2>My <span>Services</span></h2>
+    </div> 
+    
+    <div class="services-container">
+      <div class="services-box" data-service="development">
+        <i class='bx bx-code-alt service-icon'></i>
+        <h2 class="editable" data-field="service-1-title">Software Development</h2>
+        <p class="editable" data-field="service-1-desc">I offer a personalized and innovative approach to software development that ensures your projects not only meet but exceed expectations.</p>
+        <a href="#" class="btn">Read More</a>
+      </div>
 
-    <!--footer start design-->
-    <footer class="footer">
-       <div class="footer-text">
-         <p>Copyright &copy; 2025 by Ralph Jhon | All Rights Reserved.</p>
-       </div>
-       
-       <div class="footer-icon-top">
-         <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
-       </div>
-    </footer>
+      <div class="services-box" data-service="design">
+        <i class='bx bx-palette service-icon'></i>
+        <h2 class="editable" data-field="service-2-title">Software Design</h2>
+        <p class="editable" data-field="service-2-desc">I specialise in software design services that provide a magical touch to digital encounters. From user-friendly interfaces to visually excellent applications.</p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+
+      <div class="services-box" data-service="marketing">
+        <i class='bx bx-line-chart service-icon'></i>
+        <h2 class="editable" data-field="service-3-title">Digital Marketing</h2>
+        <p class="editable" data-field="service-3-desc">I specialise in fueling businesses in the digital realm. Crafting personalized social media plans and fine-tuning SEO strategies.</p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!--portfolio start design-->
+  <section class="portfolio" id="portfolio">
+    <div class="heading">
+      <h2>My <span>Latest Projects</span></h2>
+    </div>
+    
+    <div class="portfolio-container">
+      <div class="portfolio-box" data-category="development">
+        <img src="images/portfolio-img1.jpeg" alt="Project 1">
+        <div class="portfolio-layer">
+          <h3>Software Development</h3>
+          <p class="project-desc">Modern web application built with cutting-edge technologies</p>
+          <a href="#" class="project-link">
+            <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="portfolio-box" data-category="development">
+        <img src="images/portfolio-img2.jpeg" alt="Project 2">
+        <div class="portfolio-layer">
+          <h3>Software Development</h3>
+          <p class="project-desc">E-commerce platform with advanced features</p>
+          <a href="#" class="project-link">
+            <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="portfolio-box" data-category="design">
+        <img src="images/portfolio-img3.jpeg" alt="Project 3">
+        <div class="portfolio-layer">
+          <h3>Software Design</h3>
+          <p class="project-desc">Beautiful UI/UX design for mobile application</p>
+          <a href="#" class="project-link">
+            <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="portfolio-box" data-category="design">
+        <img src="images/portfolio-img4.jpeg" alt="Project 4">
+        <div class="portfolio-layer">
+          <h3>Software Design</h3>
+          <p class="project-desc">Brand identity and web design project</p>
+          <a href="#" class="project-link">
+            <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Portfolio Filter -->
+    <div class="portfolio-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="development">Development</button>
+      <button class="filter-btn" data-filter="design">Design</button>
+    </div>
+  </section>
+    
+  <!--contact start design-->
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me!</span></h2>
+    
+    <form id="contact-form" class="contact-form">
+      <div class="input-box">
+        <input type="text" name="fullName" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
+      
+      <div class="input-box">
+        <input type="tel" name="phone" placeholder="Mobile Number">
+        <input type="text" name="subject" placeholder="Email Subject" required>
+      </div>
+      
+      <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+      
+      <button type="submit" class="btn submit-btn">
+        <span class="btn-text">Send Message</span>
+        <i class="bx bx-send btn-icon"></i>
+      </button>
+    </form>
+    
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="bx bx-envelope"></i>
+        <span>ralph.dev@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <i class="bx bx-phone"></i>
+        <span>+639918429917</span>
+      </div>
+      <div class="contact-item">
+        <i class="bx bx-location-plus"></i>
+        <span>Ampayon, Butuan City</span>
+      </div>
+    </div>
+  </section>
+
+  <!--footer start design-->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>Copyright &copy; 2025 by Ralph Jhon | All Rights Reserved.</p>
+    </div>
+    
+    <div class="footer-icon-top">
+      <a href="#home" class="scroll-top">
+        <i class='bx bx-up-arrow-alt'></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loader">
+      <div class="loader-inner">
+        <div class="loader-circle"></div>
+        <div class="loader-text">Loading Portfolio...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
 </body>
-</html> 
+</html>
