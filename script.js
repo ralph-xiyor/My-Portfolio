@@ -1,6 +1,5 @@
 // Enhanced Portfolio JavaScript with Interactive Features
 
-// Global Variables
 let isEditMode = false;
 let originalContent = {};
 let isLoading = true;
@@ -66,11 +65,6 @@ function initializeFeatures() {
     // Scroll to Top
     initializeScrollToTop();
 }
-
-// ===================
-// THEME TOGGLE SYSTEM
-// ===================
-
 function initializeThemeToggle() {
     themeToggle.addEventListener('click', toggleTheme);
 }
@@ -107,11 +101,6 @@ function loadSavedTheme() {
         document.getElementById('theme-icon').className = 'bx bx-moon';
     }
 }
-
-// ================
-// EDIT MODE SYSTEM
-// ================
-
 function initializeEditMode() {
     editToggle.addEventListener('click', toggleEditMode);
     
@@ -274,11 +263,6 @@ function showNotification(message, type = 'success') {
         notification.classList.remove('show');
     }, 3000);
 }
-
-// ===================
-// SMOOTH SCROLLING
-// ===================
-
 function initializeSmoothScrolling() {
     const navLinks = document.querySelectorAll('.navbar a[data-section]');
     
@@ -306,11 +290,6 @@ function updateActiveNavLink(activeLink) {
     navLinks.forEach(link => link.classList.remove('active'));
     activeLink.classList.add('active');
 }
-
-// =================
-// PORTFOLIO FILTER
-// =================
-
 function initializePortfolioFilter() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portfolioBoxes = document.querySelectorAll('.portfolio-box');
@@ -342,11 +321,6 @@ function initializePortfolioFilter() {
         });
     });
 }
-
-// ===============
-// CONTACT FORM
-// ===============
-
 function initializeContactForm() {
     contactForm.addEventListener('submit', handleContactSubmit);
 }
@@ -399,11 +373,6 @@ function simulateFormSubmission() {
         }, 2000);
     });
 }
-
-// =================
-// SCROLL ANIMATIONS
-// =================
-
 function animateOnScroll() {
     const observerOptions = {
         threshold: 0.1,
@@ -430,11 +399,6 @@ function animateOnScroll() {
         observer.observe(el);
     });
 }
-
-// =============
-// SKILL BARS
-// =============
-
 function initializeSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress');
     
@@ -452,11 +416,6 @@ function initializeSkillBars() {
         skillObserver.observe(bar);
     });
 }
-
-// ==================
-// FLOATING ELEMENTS
-// ==================
-
 function initializeFloatingElements() {
     const floatingElements = document.querySelectorAll('.float-element');
     
@@ -488,11 +447,6 @@ function initializeFloatingElements() {
         });
     });
 }
-
-// ================
-// SOCIAL MEDIA LINKS
-// ================
-
 function initializeSocialLinks() {
     const socialLinks = document.querySelectorAll('.social-link');
     
@@ -507,11 +461,8 @@ function initializeSocialLinks() {
                 link.style.transform = '';
             }, 150);
             
-            // Show notification instead of opening link (since these are placeholder links)
+
             showNotification(`Opening ${platform} profile...`, 'success');
-            
-            // In a real implementation, you would redirect to actual social media profiles
-            // window.open(`https://${platform}.com/your-profile`, '_blank');
         });
         
         // Add hover effect with emoji
@@ -534,11 +485,6 @@ function initializeSocialLinks() {
         });
     });
 }
-
-// =================
-// SCROLL TO TOP
-// =================
-
 function initializeScrollToTop() {
     const scrollTopBtn = document.querySelector('.scroll-top');
     
@@ -571,11 +517,6 @@ function initializeScrollToTop() {
         showNotification('Back to top! 🚀', 'success');
     });
 }
-
-// ==================
-// ADVANCED FEATURES
-// ==================
-
 // Typing Animation for Hero Text
 function initializeTypingAnimation() {
     const textElement = document.querySelector('.home-text h3 span');
@@ -797,10 +738,6 @@ function initializeAdvancedFeatures() {
 // Initialize advanced features after main features
 setTimeout(initializeAdvancedFeatures, 2000);
 
-// =================
-// UTILITY FUNCTIONS
-// =================
-
 // Debounce function for performance
 function debounce(func, wait) {
     let timeout;
@@ -864,4 +801,5 @@ if (typeof module !== 'undefined' && module.exports) {
         toggleEditMode,
         showNotification
     };
+
 }
